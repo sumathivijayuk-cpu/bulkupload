@@ -8,7 +8,7 @@ console.log(7%2); //1 Reminder
 
 let y = 10
 y+=5 //y = y+5
-console.log(y);
+
 
 x = 30
 x*=10 // x = x*10
