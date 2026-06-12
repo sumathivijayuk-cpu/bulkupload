@@ -8,17 +8,17 @@ on:
     - cron: '0 0 * * *' # Runs daily at midnight
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # This environment variable is used to force JavaScript actions to run on Node.js 24, which is required for Playwright tests.
   
 jobs:
   test:
-    timeout-minutes: 30
+    timeout-minutes: 30 # Set a timeout for the job to prevent it from running indefinitely
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: 24
+        node-version: 24 # Use Node.js 24 for Playwright tests
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
